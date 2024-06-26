@@ -21,4 +21,5 @@ Well, my journey will probs be random codes in random languages (for now, mainly
 > Written with [StackEdit](https://stackedit.io/).
 
 anyway have cat
-![car. vroom vroom](http://www.baltana.com/files/wallpapers-2/Cute-Cat-Images-07756.jpg)
+![car. vroom vroom](https://www.baltana.com/files/wallpapers-2/Cute-Cat-Images-07756.jpg)
+
