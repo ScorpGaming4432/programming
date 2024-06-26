@@ -175,11 +175,11 @@ for i in range(0, len(mrnaOut), 3):
     bialkoOut += mrnaToBialkaTranslator0[mrnaOut[i]][mrnaOut[i+1]][mrnaOut[i+2]]
 
 #1
-def splitOnThree(str):
+'''def splitOnThree(str):
     return [str[start:start+3] for start in range(0, len(str), 3)]
 kod = splitOnThree(mrnaOut)
 for i in range(len(kod)):
-    bialkoOut += mrnaToBialkaTranslator1[kod[i]]
+    bialkoOut += mrnaToBialkaTranslator1[kod[i]]'''
 
 
 
