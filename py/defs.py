@@ -111,4 +111,3 @@ def printarray(array:list):
             print(str(object).rjust(maxlength), end=" ")
         print()
 
-        
