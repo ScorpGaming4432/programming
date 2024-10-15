@@ -3,23 +3,31 @@ PI = 3.14159265358979323846
 E = 2.718281828459045
 R = 8.31446261815324
 FI = 1.61803398874989484820 # Pi/2
-def occurance(itt: object) -> dict:
+def occurance(itt: object, sort=None) -> dict:
     """Count the occurance of each element in an itterable element f.e. letters, numbers in an array or string.
 
     Args:
         itt (Itterable): Itterable element to count the occurance of.
+    (optional)
+        sort (str): Ascending ('asc') or Descending ('desc')
 
     Returns:
         dict {element : count}: Output with all counted occurances of each element.
+    (if `sort` used)
+        list [element]: Output with sorted elements 
 
     """
+    def values(d: dict): return d.values()
     out = {}
     for occ in itt:
         if occ in out:
             out[occ] += 1
         else:
             out[occ] = 1
-    return out
+    if sort == None:
+        return out
+    else:
+        return sorted(out, key=lambda d: out[d], reverse= sort=='desc')
 
 def isprime(n:int) -> bool:
     """Returns True if n is prime.
@@ -111,3 +119,4 @@ def printarray(array:list):
             print(str(object).rjust(maxlength), end=" ")
         print()
 
+        

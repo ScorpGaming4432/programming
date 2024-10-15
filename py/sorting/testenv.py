@@ -1,0 +1,8 @@
+import merge_sort
+import selection_sort
+import stalin_sort
+import bogo_sort
+import bubble_sort
+import insertion_sort
+import quick_sort
+import bitonic_sort

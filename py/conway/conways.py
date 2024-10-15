@@ -4,9 +4,9 @@ for i in range(len(newboard)):
     newboard[i] = newboard[i].split()
     newboard[i] = list(map(int, [*newboard[i][0]]))
 '''newboard = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0], 
-    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+    [0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
     [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -30,7 +30,7 @@ for i in range(len(newboard)):
                 total_sum += board[i][j]
     
     return total_sum'''
-#sum of the radius = 7.936
+
 
 board_length = len(newboard)
 def lifecheck(i, j):
@@ -58,12 +58,12 @@ def lifecheck(i, j):
             return checks + board[i][j-1] + board[i-1][j-1]
         else:
             return checks + board[i][j+1] + board[i-1][j+1] + board[i][j-1] + board[i-1][j-1]
-#improved logic = 3.485
+
 
 
 board = []
 steps = 0
-frameratelimit = 3
+frameratelimit = 0
 from time import time, sleep
 starttime = time()
 while newboard != board:
@@ -89,7 +89,7 @@ while newboard != board:
     printout = str(steps) + '\n'
     for pod in board:
         line = "".join(str(num) for num in pod)
-        #print(line.replace("0", "⬜").replace("1", "⬛"))
+        #print(line)
         printout += line.replace("0", "⬜").replace("1", "⬛") + "\n"
     print(printout)
 

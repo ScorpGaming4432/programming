@@ -2,7 +2,10 @@
 #JTEMP-3.pdf
 temp = int(input())
 while not(-100 <= temp <= 100): temp = int(input())
-print(f'C\tK\tF\tR\n{temp}\t{round(temp+273.15,2)}\t{round((temp*9/5)+32,2)}\t{round((temp+273.15)*9/5,2)}')
+temps = list(map(str, temp, round(temp+273.15, 2), round((temp*9/5)+32, 2), round((temp+273.15)*9/5, 2)))
+print(temps)
+
+print('C', 'K', 'F', 'R', f'\n{temp}', round(temp+273.15,2), round((temp*9/5)+32,2), R)
 #JWALUTY-2.pdf zrobione na lekcji
 #LEKO01AJD-2.pdf
 nums = input().split(' ')
