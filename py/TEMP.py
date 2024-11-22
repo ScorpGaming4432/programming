@@ -1,5 +1,6 @@
 def function(x):
     if x == 0:
+<<<<<<< HEAD
         return 0, 1  # Funkcja została wywołana 1 raz
     else:
         wynik, wywolania_z_rekurencji = function(x // 2)
@@ -20,3 +21,12 @@ for i in range(20000):
     if wynik[0] == 18:
         out.append(i)
 print(min(out), max(out))
+=======
+        return x
+    else:
+        return 2 + function(x // 2)
+
+print(function(3))
+print(function(16))
+print(function(35))
+>>>>>>> 6c0e11f6032e7b9187ab17acf7c46f2587e7caa0
