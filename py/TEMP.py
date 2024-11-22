@@ -1,8 +1,22 @@
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
+def function(x):
+    if x == 0:
+        return 0, 1  # Funkcja została wywołana 1 raz
+    else:
+        wynik, wywolania_z_rekurencji = function(x // 2)
+        return 2 + wynik, wywolania_z_rekurencji + 1  # Dodajemy 1 wywołanie za bieżące wywołanie
 
-print(None == False)
-from defs import occurance
+'''import time
+i = 2
+while True:
+    wynik = function(i)
+    print(i, wynik)
+    i*=2
+    if i :
+        break'''
 
-ipa = "The First Noel the Angels did say Was to certain poor shepherds in fields where they lay In fields where they lay keeping their sheep On a cold winter's night that was so deep Noel Noel Noel Noel Born is the King of Israel They looked up and saw a star Shining in the East beyond them far And to the earth it gave great light And so it continued both day and night Noel Noel Noel Noel Born is the King of Israel"
-print(occurance(ipa.lower().split(' ')).keys())
+out = []
+for i in range(20000):
+    wynik = function(i)
+    if wynik[0] == 18:
+        out.append(i)
+print(min(out), max(out))
