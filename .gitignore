@@ -1,3 +1,5 @@
 
 /c/.vscode
 /py/.idea
+.history
+*.pyc
