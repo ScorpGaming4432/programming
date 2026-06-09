@@ -3,7 +3,7 @@
 this repository is mainly used for tracking my progress in coding
 what i'm going to have here is based completely on my preference and what i think should be here
 ## So what's actually here?
-Well, my journey will probs be random codes in random languages (for now, mainly python) but if i'll care enough i'll update the codes with some description or whatever
+Well, my journey will probs be random codes in random languages (for now, mainly Rust) but if i'll care enough i'll update the codes with some description or whatever
 ## Why even do this?
 
  1. cos.
