@@ -27,18 +27,38 @@ main()  // This is the first example of variation inside the main function decla
 	// Notice the lack of a return statement. It is not necessary, but it's good practice to `return 0;`.
 }
 
-/*
- * The (nowadays) small group of assembly fans will recognize that the structure of C (ANSI) can sometimes be VERY similar to assembly language.
- * As a matter of fact, the C language was designed to be a high-level language that could be compiled into efficient assembly code.
-*/
-/*
- * This file is the first example of variation inside the main function declaration. The main function can be declared in several ways according to ANSI C standard.
+
+// The (nowadays) small group of assembly fans will recognize that the structure of C (ANSI) can sometimes be VERY similar to assembly language.
+// As a matter of fact, the C language was designed to be a high-level language that could be compiled into efficient assembly code.
+// Of course with every new standard, C has become more and more abstracted from the hardware, but the core principles of C remain rooted in its low-level capabilities.
+
+/* Functions: declaration and implementation
+ * This file is the first example of variation inside the main function declaration. The main function can be declared in several ways according to ANSI C standard, we'll focus on `main` itself later.
  * Function declarations follow simple rules:
  *  1. The return type of a function *can* be specified before the function name. By default - `int`.
  *  2. Function names must be unique within a program and begin with a letter or an underscore, followed by letters, digits, or underscores. 
- *     Only then the function name can be followed by a pair of parentheses `()` that may contain parameters (if any) for the function. 
- *  3. A function HAS to have ONE implementation. This means that we can't have so-called "function overloading" in C. 
- *     Also, it means that a function needs to have a body (implementation) defined by a pair of curly braces `{}`. The body contains the code that will be executed when the function is called.
+ *      Only then the function name can be followed by a pair of parentheses `()` that may contain parameters (if any) for the function. 
+ *  3. A function HAS to have ONE implementation. 
+ *      This means that we can't have so-called "function overloading" in C. 
+ *      Also, it means that a function needs to have a body (implementation) defined by a pair of curly braces `{}`. The body contains the code that will be executed when the function is called.
  * From the rules above, you probably noticed that a declaration and an implementation can be two different things and in fact, they *can* be separated!
  * We'll see examples of this in the future.
-*/
+ */
+
+/* A `while` loop
+ * A `while` loop is a control flow statement that allows code to be executed repeatedly based on a given boolean condition. 
+ * The loop will continue to execute as long as the condition evaluates to true. Once the condition evaluates to false, the loop will terminate, and the program will continue executing the code that follows the loop.
+ * The syntax of a `while` loop is as follows:
+ * 
+ * while (condition) {
+ *     // Code to be executed repeatedly
+ * }
+ * 
+ * In this program, we use a `while` loop to iterate through a range of Fahrenheit temperatures from `lower` (0) to `upper` (300) with a step size of `step` (20). 
+ * The loop continues to execute as long as the value of `fahr` is less than or equal to `upper`. Inside the loop, we calculate the corresponding Celsius temperature using the formula and print both Fahrenheit and Celsius values to the console. 
+ * After printing, we increment the value of `fahr` by `step` for the next iteration.
+ * 
+ * It's a common mistake to accidentally create so-called "endless loops" when using `while` loops. This happens when the condition never evaluates to false, causing the loop to run indefinitely.
+ * Just make sure to actually have a break condition in your loop.
+   (here we don't do that cuz we're fucking pro #yolo)
+ */
