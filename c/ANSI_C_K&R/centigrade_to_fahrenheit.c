@@ -10,18 +10,21 @@
 
 main()  // This is the first example of variation inside the main function declaration. (See below)
 {
-	int fahr, celsius;  // This is a variable declaration. It tells the program
-	int lower, upper, step;
-	lower = 0;   /* lower limit of temperature scale */
-	upper = 300; /* upper limit */
+	int fahr, celsius;  // This is a variable declaration. It tells the program that we want to allocate memory for two integer variables named `fahr` and `celsius`. The `int` keyword indicates that these variables will hold integer values. In C, variable declarations are typically placed at the beginning of a block of code, before any executable statements. This is a requirement in the C89/C90 standard, which is the version of C that this program adheres to. In later versions of C (C99 and beyond), variable declarations can be placed anywhere within a block of code, but for compatibility with older standards, we declare them at the beginning here.
+	int lower, upper, step;  // We can have as many variables in a decleration as we want, separated by commas. Reminder that all variables will be the same type when we do that.
+	lower = 0;   /* lower limit of temperature scale */  // This is an assignment statement (kinda like a `definition` or `implementation`). It assigns the value 0 to the variable `lower`. The `=` operator is used for assignment in C. In this case, we are starting our temperature conversion from 0 degrees Fahrenheit.
+	upper = 300; /* upper limit */  // Another assignment.
 	step = 20;   /* step size */
-	fahr = lower;
-	while (fahr <= upper)
-	{
-		celsius = 5 * (fahr - 32) / 9;
-		printf("%d\t%d\n", fahr, celsius);
-		fahr = fahr + step;
-	}
+	fahr = lower;  // We can assign the value of one variable to another. In this case, we are initializing the `fahr` variable with the value of `lower`, which is 0. This means that our first iteration of the loop will start with a Fahrenheit temperature of 0 degrees.
+	while (fahr <= upper)  // This is a while loop. (See below)
+	{  // Open a block of code (body of the loop)
+		celsius = 5 * (fahr - 32) / 9;  // This is the formula for converting Fahrenheit to Celsius. The calculation is performed using integer arithmetic, which means that any fractional part of the result will be truncated (not rounded). This is important to note because it can lead to a loss of precision in the conversion. 
+		// In this case, we are using integer division, which means that the result will be an integer value. If we wanted to preserve the fractional part, we would need to use floating-point arithmetic instead. We'll see how to do that later when learning about data types.
+		printf("%d\t%d\n", fahr, celsius);  // This is far too complicated for a beginner to understand. (See below "string formatting" comment)
+		fahr = fahr + step;  // Assignment can be a computation as well. In this case, we are assigning `fahr` the value of `fahr + step`, which means that we are incrementing the Fahrenheit temperature by the step size (20 degrees) for the next iteration of the loop. This is how we move through the range of temperatures from `lower` to `upper`.
+	}  // Close the block of code (body of the loop)
+
+	// Notice the lack of a return statement. It is not necessary, but it's good practice to `return 0;`.
 }
 
 /*
