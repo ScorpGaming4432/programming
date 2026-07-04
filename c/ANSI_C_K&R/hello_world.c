@@ -11,8 +11,7 @@
 int main(void)			   // This is the main function, which is the entry point of a C program. The 'void' indicates that this function does not take any parameters. In the book it's written a little bit differently, but this is the same thing. In human words - the main function is where the program starts executing.
 {				   // Function body starts here. The opening curly brace '{' indicates the beginning of a code block. In this case, it marks the start of the main function's body.
 	printf("Hello, world!\n"); // This line calls the `printf` function, which is used to print formatted output to the console. The string "Hello, world!\n" is passed as an argument to printf. The '\n' is a newline character, which moves the cursor to the next line after printing the message. We'll learn more about escape sequences and functions later in the book. For now, just remember that this line prints "Hello, world!" to the console.
-	/*
-	 * Quick note about string constants.
+	/* Quick note about string constants.
 	 * String constants are sequences of characters enclosed in double quotes. In this case, "Hello, world!\n" is a string constant. The compiler treats string constants as arrays of characters, and they are stored in memory as a sequence of characters followed by a null terminator '\0' to indicate the end of the string. When we pass a string constant to a function like printf, we are actually passing a pointer to the first character of the string in memory. This is an important concept in C programming, and we'll explore it further in later chapters.
 	 * String constants cannot be broken up into multiple lines without using the backslash '\' character at the end of a line. If you want to split a long string constant across multiple lines, you can use the backslash to indicate that the string continues on the next line. For example:
 	 *
@@ -36,7 +35,7 @@ int main(void)			   // This is the main function, which is the entry point of a 
 // If you're using VSC, just use Ctrl+Shift+B to build and *run* the project with the default task.
 // Then we don't have to worry about manual linking and compiling. The default task will handle it for us.
 // (Note: The default task is configured in the .vscode/tasks.json file, which is part of the project. You can customize the build and run commands in that file if needed. I used `tcc` as the compiler, but you can change it to any other compiler you prefer, such as `gcc` or `clang`. Just make sure to update the tasks.json file accordingly.
-//  Also, worth noting, tcc technically implements some C99 features and many GNU extentions, though not all.
+//  Also, worth noting, tcc technically implements some C99 features and many GNU extentions, though not all. To force the compiler to use the C99 standard, you can use the `-std=c99` flag when compiling. For example: `cc -std=c99 hello.c`. This will ensure that the compiler adheres to the C99 standard and enables any relevant features or behaviors specific to that standard. However, for this simple "Hello, world!" program, we don't need to worry about that, as it will compile and run correctly with the default settings of tcc.
 //  Because of the fact that we're not trying to appeal to the C99 nerds or to implement any of the newer C concepts (We're using only ANSI C, or K&R C, a.k.a C89 or C90), we can safely use tcc for this project. It will work fine for our purposes.
 //  If you want to use a different compiler, you can do so. Though, honestly, why would you?)
 

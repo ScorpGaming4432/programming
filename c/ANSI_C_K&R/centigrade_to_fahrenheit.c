@@ -62,3 +62,24 @@ main()  // This is the first example of variation inside the main function decla
  * Just make sure to actually have a break condition in your loop.
    (here we don't do that cuz we're fucking pro #yolo)
  */
+
+/* String formatting
+ * Here we go. The most complicated part of this program. 
+ * The `printf` function is used to print formatted output to the console. It takes a format string as its first argument, followed by a variable number of additional arguments that correspond to the format specifiers in the format string.
+ * This sounds like a bunch of gibberish, but it's actually quite simple. The format string is a string that contains text and format specifiers, which are placeholders for the values that will be printed. 
+ * The format specifiers begin with a percent sign `%` followed by a character that indicates the type of value to be printed.
+ * So, for example if we would want to print an `int`, we'd use a specifier "%d". So the function would look like: `printf("%d", int_variable);` and it would print the value of `int_variable` to the console.
+ * The additional elements of a format string go as follows:
+ *  %[flags][[-]width][.precision][length]specifier
+ *  - flags: optional, can be used to modify the output (e.g., left-justify, pad with zeros, etc.)
+ *  - width: optional, specifies the minimum number of characters to be printed. If the value to be printed is shorter than the specified width, it will be padded with spaces (or zeros if the '0' flag is used).
+ *    in case a '-' sign is used, the output will be left-justified within the specified width.
+ *  - precision: optional, specifies the number of digits to be printed after the decimal point for floating-point numbers, or the maximum number of characters to be printed for strings.
+ *  - length: optional, specifies the size of the argument (e.g., `l` for long, `h` for short, etc.). This is used to ensure that the correct type of argument is passed to the function.
+ *  - specifier: required, indicates the type of value to be printed.
+ * The list of specifiers is as follows:
+ *  - `d` or `i`: signed decimal integer
+ *  - `u`: unsigned decimal integer
+ * - `f`: floating-point number (decimal notation)
+ * - `e` or `E`: floating-point number (scientific notation)
+*/
