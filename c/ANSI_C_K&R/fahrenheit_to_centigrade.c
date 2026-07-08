@@ -63,23 +63,36 @@ main()  // This is the first example of variation inside the main function decla
    (here we don't do that cuz we're fucking pro #yolo)
  */
 
-/* String formatting
+/* String formatting [https://en.wikipedia.org/wiki/Printf#Format_specifier]
  * Here we go. The most complicated part of this program. 
  * The `printf` function is used to print formatted output to the console. It takes a format string as its first argument, followed by a variable number of additional arguments that correspond to the format specifiers in the format string.
- * This sounds like a bunch of gibberish, but it's actually quite simple. The format string is a string that contains text and format specifiers, which are placeholders for the values that will be printed. 
- * The format specifiers begin with a percent sign `%` followed by a character that indicates the type of value to be printed.
+ * This sounds like a bunch of gibberish, but it's actually quite simple. Think of a format string as placeholders for the values that will be printed and you can tell your computer *how* to print them. 
+ * The most popular usage of format specifiers begins with a percent sign `%` followed by a character that indicates the type of value to be printed.
  * So, for example if we would want to print an `int`, we'd use a specifier "%d". So the function would look like: `printf("%d", int_variable);` and it would print the value of `int_variable` to the console.
- * The additional elements of a format string go as follows:
- *  %[flags][[-]width][.precision][length]specifier
- *  - flags: optional, can be used to modify the output (e.g., left-justify, pad with zeros, etc.)
+
+ * The more advanced elements of a format string go as follows:
+
+ *  %[parameter][flags][width][.precision][length]type
+
+ *  - parameter: optional, specifies the position of the argument to be printed (e.g., `1$` for the first argument, `2$` for the second argument, etc.). This is useful when you want to print arguments in a different order than they are provided.
+ *  - flags: optional, can be used to align output, pad with zeros, or display a sign for numeric values.
  *  - width: optional, specifies the minimum number of characters to be printed. If the value to be printed is shorter than the specified width, it will be padded with spaces (or zeros if the '0' flag is used).
- *    in case a '-' sign is used, the output will be left-justified within the specified width.
- *  - precision: optional, specifies the number of digits to be printed after the decimal point for floating-point numbers, or the maximum number of characters to be printed for strings.
- *  - length: optional, specifies the size of the argument (e.g., `l` for long, `h` for short, etc.). This is used to ensure that the correct type of argument is passed to the function.
- *  - specifier: required, indicates the type of value to be printed.
- * The list of specifiers is as follows:
- *  - `d` or `i`: signed decimal integer
- *  - `u`: unsigned decimal integer
- * - `f`: floating-point number (decimal notation)
- * - `e` or `E`: floating-point number (scientific notation)
-*/
+ *  - precision: optional, usually specifies a maximum limit of the output for a given type. For this just refer to the wikipedia article above. It says it better than I can explain it.
+ *  - length: optional, specifies the size of the argument (e.g., `l` for long, `h` for short, etc. [see wiki above]). This is used to ensure that the correct type of argument is passed to the function.
+ *  - type: required, indicates the type of value to be printed. The list of type specifiers is as follows:
+ *    - `d` or `i`: signed decimal integer (int)
+ *    - `u`: unsigned decimal integer (unsigned int) [we'll learn other types of data later]
+ *    - `f` or `F`: floating-point number (decimal notation)
+ *    - `e` or `E`: floating-point number (scientific notation)
+ *    - `g` or `G`: floating-point number (uses the shorter of %e or %f) [significant digits]
+ *    - `a` or `A`: floating-point number (hexadecimal notation),
+ *    - `c`: single character (char)
+ *    - `s`: string of characters (char array until \0) [it's more complicated than that, but we'll learn about it later]
+ *    - `p`: pointer (void *)
+ *    - `o`: unsigned octal integer (unsigned int)
+ *    - `x` or `X`: unsigned hexadecimal integer (unsigned int)
+ *    - `n`: number of characters written so far, outputs nothing (int *)
+ *    - `%`: a literal percent sign
+
+ * VERY fun fact. If you format your string incorrectly, your program will corrupt itself from inside or start showing garbage :)
+ */
