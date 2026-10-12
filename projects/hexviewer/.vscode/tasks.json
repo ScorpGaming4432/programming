@@ -1,0 +1,67 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: clang.exe build active file",
+      "command": "C:\\Program Files\\LLVM\\bin\\clang.exe",
+      "args": [
+        "-fcolor-diagnostics",
+        "-fansi-escape-codes",
+        "-std=c99",
+        "-O2",
+        "-g",
+        "-save-temps",
+        "-Wall",
+        "-Wshadow",
+        "-Wconversion",
+        "-Wsign-conversion",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-fno-omit-frame-pointer",
+        "-fno-common",
+        "-MMD",
+        "-MF",
+        "${fileDirname}\\build\\${fileBasenameNoExtension}.d",
+        "${file}",
+        "-o",
+        "${fileDirname}\\build\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Workspace task: compile active C file with C99, O2 and all warnings (debug)"
+    },
+    {
+      "type": "cppbuild",
+      "label": "C/C++: clang.exe build active file for release",
+      "command": "C:\\Program Files\\LLVM\\bin\\clang.exe",
+      "args": [
+        "-fcolor-diagnostics",
+        "-fansi-escape-codes",
+        "-std=c99",
+        "-O3",
+        "-ffast-math",
+        "-s",
+        "-march=native",
+        "-pipe",
+        "${file}",
+        "-o",
+        "${fileDirname}\\release\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Workspace task: compile active C file with C99, O2 and release optimizations"
+    }
+  ]
+}
