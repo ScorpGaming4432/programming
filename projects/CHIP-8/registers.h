@@ -4,6 +4,7 @@
 
 uint8_t V[16]; //general purpose
 uint16_t I;
+uint16_t read_output;
 
 uint16_t PC;
 uint8_t SP;

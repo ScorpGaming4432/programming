@@ -23,6 +23,7 @@ unsigned long fsize(const char* file)
 int init(const char* game_name) {
     init_RAM();
     load_game_to_ram(game_name, fsize(game_name));
+    PC = START_CHIP8;
     return 0;
 }
 
@@ -30,9 +31,9 @@ int main(int argc, char const *argv[])
 {   
     const uint32_t FILE_SIZE = fsize(argv[1]);
     init(argv[1]);
-    for (uint32_t i = 0; i < END_RAM; i++)
-    {
-        printf("%04hx | PC:%hu\n", read(), PC);
+    // PC = 0; // testing
+    while (1) {
+        read();
+        execute();
     }
-    
 }
