@@ -48,7 +48,7 @@ Other source files can include it normally:
 The library provides two functions:
 
 | Function | Description |
-|---|---|
+| --- | --- |
 | `c_printf()` | Prints formatted text to stdout. |
 | `c_sprintf()` | Writes formatted text into a buffer. |
 
@@ -71,7 +71,7 @@ c_printf("{BOLD UNDERLINE RED}Important text{/}\n");
 ### Text attributes
 
 | Tag | Alias | Description |
-|---|---|---|
+| --- | --- | --- |
 | `BOLD` | `**` | Bold / increased intensity |
 | `FAINT` | `DIM`, `FEINT` | Reduced intensity |
 | `ITALIC` | `*` | Italic text |
@@ -85,7 +85,7 @@ c_printf("{BOLD UNDERLINE RED}Important text{/}\n");
 ### Reset and attribute controls
 
 | Tag | Description |
-|---|---|
+| --- | --- |
 | `RESET` | Reset all formatting attributes |
 | `/` | Alias for `RESET` |
 | `BOLD_OFF` | Disable bold and faint |
@@ -110,7 +110,7 @@ c_printf("{RED}Red{/} and {BLUE}blue{/}\n");
 ### Standard foreground colors
 
 | Tag | Color |
-|---|---|
+| --- | --- |
 | `BLACK` | Black |
 | `RED` | Red |
 | `GREEN` | Green |
@@ -215,7 +215,9 @@ Unlike brace-style tags, these macros do not require `c_printf()` or `c_sprintf(
 ## Limitations
 
 - **Terminal support:** ANSI escape sequences must be supported by the terminal to display correctly.
+
 >Because of that, the library only handles popular ANSI SGR sequences. It does not support all possible ANSI escape codes. If you know your terminal supports additional sequences, you can use the direct ANSI macros to construct them manually, or if you want to add support for additional sequences, you can modify the library's source code, or even better - submit a pull request to the repository.
+
 - **No automatic reset:** Formatting remains active until explicitly reset or changed.
 - **No nested formatting:** Tags emit ANSI SGR sequences directly. They do not maintain a formatting stack.
 - **Unknown tags:** Unknown or malformed tags are preserved as literal text.
